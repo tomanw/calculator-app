@@ -8,6 +8,7 @@
 #include <string.h>
 
 int atoi(const char *nptr);
+void ShowHelp();
 
 int main(int argc, char** argv) {
     //? -s / --subtract function
@@ -34,7 +35,15 @@ int main(int argc, char** argv) {
         int result = atoi(argv[2]) / atoi(argv[3]);
         printf("%i\n", result);
     } else {
-        printf("Still being worked on! or incorrect function!\n");
+        ShowHelp();
     }
     return 0;
+}
+
+void ShowHelp() {
+    printf("Arguments:\n");
+    printf("Format: calculator [flags] [number 1] [number 2]\n");
+    printf("-s / --subtract | Subtracts [number 2] from [number 1]\n");
+    printf("-a / --add | Adds 2 numbers together\n");
+    printf("-m / --multiply | Mulitplies [number 1] by [number 2]\n");
 }
