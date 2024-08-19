@@ -2,6 +2,16 @@
 COMPILER = gcc
 COMPILER_FLAGS = -o
 SOURCE_FILES = src/main.c
+TARGET = calculator
+PREFIX = /usr/bin
 
-build: src/main.c
-	$(COMPILER) $(COMPILER_FLAGS) dist/main $(SOURCE_FILES) 
+$(TARGET): $(SOURCE_FILES)
+	$(COMPILER) $(COMPILER_FLAGS) $@ $^
+
+.PHONY=install
+install: $(TARGET)
+	install -m 755 $(TARGET) $(PREFIX)/$(TARGET)	
+ 
+.PHONY=uninstall
+uninstall:
+	rm -f $(PREFIX)/$(TARGET)		

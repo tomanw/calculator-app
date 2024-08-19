@@ -17,19 +17,19 @@ int main(int argc, char** argv) {
         printf("%i\n", result);
     }
     //? -a / --add function
-    if (argc > 3 && strcmp(argv[1], "--add") == 0 || strcmp(argv[1], "-a") == 0) {
+    else if (argc > 3 && strcmp(argv[1], "--add") == 0 || strcmp(argv[1], "-a") == 0) {
         //* argv[2] + argv[3]
         int result = atoi(argv[2]) + atoi(argv[3]);
         printf("%i\n", result);
     } 
     //? -m / --multiply function
-    if(argc > 3 && strcmp(argv[1], "--multiply") == 0 || strcmp(argv[1], "-m") == 0) {
+    else if(argc > 3 && strcmp(argv[1], "--multiply") == 0 || strcmp(argv[1], "-m") == 0) {
         //* argv[2] * argv[3]
         int result = atoi(argv[2]) * atoi(argv[3]);
         printf("%i\n", result);
     }
     //? -d / --divide 
-    if(argc > 3 && strcmp(argv[1], "--divide") == 0 || strcmp(argv[1], "-d") == 0) {
+    else if(argc > 3 && strcmp(argv[1], "--divide") == 0 || strcmp(argv[1], "-d") == 0) {
         //* argv[2] / argv[3]
         int result = atoi(argv[2]) / atoi(argv[3]);
         printf("%i\n", result);
